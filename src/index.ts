@@ -1,0 +1,1 @@
+console.log('Let start best bot of the world !');

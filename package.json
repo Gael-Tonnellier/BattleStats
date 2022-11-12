@@ -1,0 +1,33 @@
+{
+  "name": "battlestats",
+  "version": "0.0.1",
+  "description": "A discord bot who allow you to get Blizzard games statistics",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r dotenv/config ./public/index.js",
+    "test": "Hello World ! "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gael-Tonnellier/BattleStats.git"
+  },
+  "author": "Gaël Tonnellier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gael-Tonnellier/BattleStats/issues"
+  },
+  "homepage": "https://github.com/Gael-Tonnellier/BattleStats#readme",
+  "dependencies": {
+    "@discordjs/builders": "^1.3.0",
+    "@discordjs/rest": "^1.3.0",
+    "discord-api-types": "^0.37.17",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.8.4"
+  }
+}
