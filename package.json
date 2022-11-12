@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node -r dotenv/config ./public/index.js",
-    "test": "Hello World ! "
+    "dev": "nodemon -r dotenv/config ./src/index.ts"
   },
   "repository": {
     "type": "git",

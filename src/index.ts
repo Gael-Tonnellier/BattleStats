@@ -1,1 +1,25 @@
-console.log('Let start best bot of the world !');
+import { ChannelType, Client } from "discord.js";
+import { IntentOptions } from "./config/IntentOptions";
+import { connectDatabase } from "./database/connectDatabase";
+import { onGuildCreate } from "./events/onGuildCreate";
+import { onInteraction } from "./events/onInteraction";
+import { validateEnv } from "./utils/validateEnv";
+
+(async () => {
+  if (!validateEnv()) return;
+
+  const BOT = new Client({ intents: IntentOptions });
+
+  BOT.on("ready", () => console.log("Connected to Discord !"));
+  BOT.on(
+    "interactionCreate",
+    async (interaction) => await onInteraction(interaction)
+  );
+  BOT.on(
+    "guildCreate",
+    async (guildCreate) => await onGuildCreate(guildCreate)
+  );
+  await connectDatabase();
+
+  await BOT.login(process.env.BOT_TOKEN);
+})();
